@@ -1,0 +1,153 @@
+﻿
+@{
+    Layout = Layout = "~/Views/Shared/Home.cshtml";
+}
+
+@section Body{
+    <form action="DomainController" method="post">
+        <table class="body-table" cellspacing="0" cellpadding="0" border="0">
+            <colgroup width="130px" />
+            <colgroup />
+            <colgroup width="130px" />
+            <colgroup />
+            <colgroup width="130px" />
+            <colgroup />
+            <tbody>
+                <tr>
+                    <td colspan="6" class="body-table-header">
+                        <!-- h1-bg-blue.png -->
+                        <h1>
+                            <label>Domains Search</label>
+                        </h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>ID</label>
+                    </td>
+                    <td>
+                        <input type="text" class="form" style="width:185px" />
+                    </td>
+                    <td>
+                        <label>Name</label>
+                    </td>
+                    <td>
+                        <input type="text" class="form" width="185" />
+                    </td>
+                    <td>
+                        <label> Customer No </label>
+                    </td>
+                    <td>
+                        <input type="text" class="form" width="185" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6" class="actions">
+                        <input type="submit" name="Search" class="button" value="Search" style="width:75px" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="0" cellpadding="0" cellspacing="0" class="body-table">
+            <tr>
+                <td class="body-table-header">
+                    <h1>
+                        <label>Domain List</label>
+                    </h1>
+                </td>
+            </tr>
+            <tr>
+                <td class="grid-container3">
+
+                    @*@{
+                            var grid = new WebGrid(Model.LiCustomer, canPage: true, rowsPerPage: 3);
+                        }
+
+                        @grid.GetHtml(columns: grid.Columns(grid.Column("_CustomerNo", "Customer No"),
+                                 grid.Column("_Name", "Customer Name"),
+                                 grid.Column("_NationalID", "National ID"),
+                                 grid.Column("_Gender", "Gender"),
+                                 grid.Column("_IsCompany", "Company")))*@
+
+                </td>
+            </tr>
+        </table>
+        <table class="body-table" cellspacing="0" cellpadding="0" border="0">
+            <colgroup width="130px" />
+            <colgroup />
+            <colgroup width="130px" />
+            <colgroup />
+            <colgroup width="130px" />
+            <colgroup />
+            <tbody>
+                <tr>
+                    <td colspan="6" class="body-table-header">
+                        <h1>
+                            <label>Domain Entry</label>
+                        </h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>ID</label>
+                    </td>
+                    <td>
+                        <input type="text" class="form-description" width="185" />
+                    </td>
+                    <td>
+                        <label>Customer No</label>
+                    </td>
+                    <td>
+                        <input type="text" class="form-required" width="185" />
+                    </td>
+                    <td>
+                        <label>Name</label>
+                    </td>
+                    <td>
+                        <input type="text" class="form-required" width="185" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Address</label>
+                    </td>
+                    <td colspan="3">
+                        <input type="text" class="form" style="width:457px" />
+                    </td>
+                    <td>
+                        <label>Created By</label>
+                    </td>
+                    <td>
+                        <input type="text" class="form" width="185" />
+                    </td>
+                </tr>
+           <tr> <td>
+                <label>Creation Date</label>
+            </td>
+            <td>
+                <input type="text" class="form" width="185" />
+            </td>
+            <td>
+                <label>ModifiedBy</label>
+            </td>
+            <td>
+                <input type="text" class="form" width="185" />
+            </td>
+            <td>
+                <label>Modification Date</label>
+            </td>
+            <td>
+                <input type="text" class="form" width="185" />
+            </td>
+            </tr>
+                <tr>
+                <td colspan="6" style="text-align:right">
+                    <input type="submit" value="Save" name="Save" class="button" />
+                    <input type="submit" value="Update" name="Update" class="button" />
+                </td>
+            </tr>
+           </tbody>
+        </table>
+    </form>
+}
+

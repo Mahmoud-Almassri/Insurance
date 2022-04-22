@@ -1,0 +1,156 @@
+﻿ @model InsuranceMVC.Models.Vmdocument
+                   
+@{
+   Layout = Layout = "~/Views/Shared/Home.cshtml";
+}
+
+@section Body{
+<form action="documentsController" method="post">
+    <table class="body-table" cellspacing="0" cellpadding="0" border="0">
+        <colgroup width="130px" />
+        <colgroup />
+        <colgroup width="130px" />
+        <colgroup />
+        <colgroup width="130px" />
+        <colgroup />
+        <tbody>
+            <tr>
+                <td colspan="6" class="body-table-header">
+
+                    <h1>
+                        <label>Domains Search</label>
+                    </h1>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Name</label>
+                </td>
+                <td>
+                    @Html.TextBoxFor(a => a._doc._name, htmlAttributes: new { @Name = "txtsearchname" })
+                </td>
+                <td>
+                    <label>Class</label>
+                </td>
+                <td>
+                    @Html.DropDownListFor(a => a._doc._class_id, new SelectList(Model._list_classid, "class_id", "class_name"), htmlAttributes: new { @Name = "listsearchclass" })
+                </td>
+                <td>
+                    <label>Apply On </label>
+                </td>
+                <td>
+                    @Html.DropDownListFor(a => a._doc._Apply_On, new SelectList(Model._list_applyon, "apply_id", "apply_name"), htmlAttributes: new { @Name = "listsearchapply_on" })
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" class="actions">
+                    <input type="submit" name="Search" class="button" value="Search" style="width:75px" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table border="0" cellpadding="0" cellspacing="0" class="body-table">
+        <tr>
+            <td class="body-table-header">
+                <h1>
+                    <label>Domain List</label>
+                </h1>
+            </td>
+        </tr>
+        <tr>
+            <td class="grid-container3">
+
+                @{
+                    var grid = new WebGrid(Model._listdocuments, canPage: true, rowsPerPage: 4);
+                }
+
+                @grid.GetHtml(columns: grid.Columns(
+
+                             grid.Column("_name", "Document name"),
+                             grid.Column("_class_id", "decument class_id"),
+                             grid.Column("_Apply_On", "decument apply_on"),
+                             grid.Column("_is_required", "decument is_required")))
+
+            </td>
+        </tr>
+    </table>
+    <table class="body-table" cellspacing="0" cellpadding="0" border="0">
+        <colgroup width="130px" />
+        <colgroup />
+        <colgroup width="130px" />
+        <colgroup />
+        <colgroup width="130px" />
+        <colgroup />
+        <tbody>
+            <tr>
+                <td colspan="6" class="body-table-header">
+                    <h1>
+                        <label>Domain Entry</label>
+                    </h1>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>ID</label>
+                </td>
+                <td>
+                    @Html.TextBoxFor(a => a._doc._id, htmlAttributes: new { @Name = "txtdentryid" })
+                </td>
+                <td>
+                    <label>Name</label>
+                </td>
+                <td>
+                    @Html.TextBoxFor(a => a._doc._name, htmlAttributes: new { @Name = "txtentryname" })
+                </td>
+                <td>
+                    <label>Class</label>
+                </td>
+                <td>
+                    @Html.DropDownListFor(a => a._doc._class_id, new SelectList(Model._list_classid, "class_id", "class_name"), htmlAttributes: new { @Name = "listentryclass" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Apply On</label>
+                </td>
+                <td colspan="3">
+                    @Html.DropDownListFor(a => a._doc._Apply_On, new SelectList(Model._list_applyon, "apply_id", "apply_name"), htmlAttributes: new { @Name = "listentryapply_on" })
+                </td>
+                <td>
+                    <label>Created By</label>
+                </td>
+                <td>
+                    @Html.TextBoxFor(a => a._doc._Created_By, htmlAttributes: new { @Name = "txtentry_createdby" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Creation Date</label>
+                </td>
+                <td>
+                    @Html.TextBoxFor(a => a._doc._Creation_Date, htmlAttributes: new { @Name = "txtentrycreationdate" })
+                </td>
+                <td>
+                    <label>Modify By</label>
+                </td>
+                <td>
+                    @Html.TextBoxFor(a => a._doc._Modify_By, htmlAttributes: new { @Name = "txtentrymodifyby" })
+                </td>
+                <td>
+                    <label>Modification Date</label>
+                </td>
+                <td>
+                    @Html.TextBoxFor(a => a._doc._Modification_Date, htmlAttributes: new { @Name = "txtentrymodificationdate" })
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" style="text-align:right">
+                    <input type="submit" value="Save" name="Save" class="button" />
+                    <input type="submit" value="Update" name="Update" class="button" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+
+    }

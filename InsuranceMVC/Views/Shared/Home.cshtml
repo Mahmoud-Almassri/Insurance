@@ -1,0 +1,43 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Domain</title>
+    <link href="~/App_Themes/Theme_En/Style_En.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <div class="main">
+            <div class="content-box">
+                <div class="container_24">
+                    <div class="sub-menu-1">
+                        <!-- Menu background Style-->
+
+                    </div>
+                    <h4>
+                        <!-- Orange Line image name: h4-bg.png-->
+                        <b id="divMainPageTitle"></b>
+                    </h4>
+                    <div class="content-padding">
+                        @RenderSection("Body")
+                    </div>
+                    <div class="footer1">
+                        <div class="wrapper">
+                            <div class="text-bot">
+                                Copyright &copy; 2014 Dare Academy. All Rights Reserved
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
